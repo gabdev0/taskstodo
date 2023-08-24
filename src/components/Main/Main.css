@@ -1,0 +1,11 @@
+.main-app {
+    width: 100%;
+    height: calc(100vh - 128px);
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    width: 580px;
+    text-align: center;
+}

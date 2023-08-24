@@ -1,0 +1,21 @@
+.btn-create {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    font-size: 5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #27ae60;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(0);
+    transition: .3s ease;
+}
+
+.btn-create:hover {
+    transform: rotate(224deg);
+}
