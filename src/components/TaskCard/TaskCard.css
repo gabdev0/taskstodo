@@ -1,9 +1,11 @@
 .taskcard-content {
     height: 60px;
     margin: 1.6rem 8rem;
-    display: flex;
+    display: grid;
+    justify-items: center;
     align-items: center;
-    justify-content: space-around;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
     background-color: #fff;
     border-radius: 0.2rem;
     border: 1px solid #ccc;
@@ -16,3 +18,15 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transform: rotateY(10deg);
 }
+
+.taskcard-status--complete {
+    color: #00B300;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.taskcard-status--pending {
+    background-color: #FFD700;
+}
+
+/* #CCCCCC */

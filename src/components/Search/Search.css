@@ -36,5 +36,6 @@
 
 #search:focus {
     outline: none;
+    outline-color: red;
     box-shadow: none;
 }
