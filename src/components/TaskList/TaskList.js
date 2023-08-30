@@ -1,17 +1,18 @@
 import './TaskList.css';
 import { TaskCard } from '../TaskCard/TaskCard';
 
-function TaskList(){
-    const list = [{text: "read the book for tomorrow", state: false}, {text: "go for a run", state: false}, {text: "cook", state: true}]
+function TaskList({ data }){
+    const tasks = data;
 
     return(
         <div className='tasklist-content'>
-            <ul className='tasklist-list'>         
-                {list.map( l => 
+            <ul className='tasklist-list'>    
+                {tasks.map( l => 
                     l && l.text!=="" 
-                    ? <TaskCard 
+                    ? <TaskCard
+                        key={ l.text }
                         text={ l.text } 
-                        completed={ l.state }
+                        completed={ l.completed }
                         /> 
                     : null )}
             </ul>
