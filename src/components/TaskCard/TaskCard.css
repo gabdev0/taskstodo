@@ -29,4 +29,8 @@
     background-color: #FFD700;
 }
 
+.taskcard-info--complete {
+    text-decoration: line-through;
+}
+
 /* #CCCCCC */

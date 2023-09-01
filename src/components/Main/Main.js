@@ -6,7 +6,9 @@ import './Main.css';
 const defautlTasks = [
     {text: "read the book for tomorrow", completed: false}, 
     {text: "go for a run", completed: true}, 
-    {text: "cook", completed: true}
+    {text: "cook", completed: true},
+    {text: "eat", completed: false},
+    {text: "working", completed: false},
 ]
 
 function Main(){
@@ -15,6 +17,9 @@ function Main(){
 
     const completedTasks = tasks.filter( t => !!t.completed).length;
     const totalTasks = tasks.length;
+    const searchedTasks = tasks.filter(
+        t => t.text.toLowerCase().includes(searchValue.toLowerCase())
+    );
 
     return(
         <main className='main-app'>
@@ -27,7 +32,8 @@ function Main(){
                     setSearchValue={setSearchValue}
                 />
                 <TaskList
-                    data={defautlTasks}
+                    data={searchedTasks}
+                    update={setTask}
                 />
             </div>
         </main>
