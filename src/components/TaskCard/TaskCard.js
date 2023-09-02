@@ -1,3 +1,5 @@
+import { CompleteIcon } from '../CompleteIcon/CompleteIcon';
+import { DeleteIcon   } from '../DeleteIcon/DeleteIcon';
 import './TaskCard.css';
 
 function TaskCard(props){
@@ -8,18 +10,15 @@ function TaskCard(props){
 
     return(
         <li className='taskcard-content'>
-            <div className={styleStatus}>
-                <span
-                    onClick={() => onComplete(text)} 
-                >V</span>
-            </div>
+            <CompleteIcon
+                completed={props.completed}
+                onClick={() => onComplete(text)}
+            />
             <div className={`taskcard-info ${ styleText }`}>{text}</div>
-            <div >
-                <span
-                    onClick={() => onDelete(text)} 
-                    className='taskcard-delete'
-                >X</span>
-            </div>      
+            <DeleteIcon 
+                completed={props.completed}
+                onClick={() => onDelete(text)}
+            />
         </li>
     );
 }

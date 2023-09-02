@@ -19,16 +19,6 @@
     transform: rotateY(10deg);
 }
 
-.taskcard-status--complete {
-    color: #00B300;
-    font-weight: bold;
-    text-decoration: line-through;
-}
-
-.taskcard-status--pending {
-    background-color: #FFD700;
-}
-
 .taskcard-info--complete {
     text-decoration: line-through;
 }

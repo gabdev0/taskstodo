@@ -3,23 +3,15 @@ import { Search   } from '../Search/Search';
 import { TaskList } from '../TaskList/TaskList';
 import './Main.css';
 
-const defautlTasks = [
-    {text: "read the book for tomorrow", completed: false}, 
-    {text: "go for a run", completed: true}, 
-    {text: "cook", completed: true},
-    {text: "eat", completed: false},
-    {text: "working", completed: false},
-]
-
-function Main(){
+function Main({ data, save }){
     const [searchValue, setSearchValue] = React.useState('');
-    const [tasks, setTask] = React.useState(defautlTasks);
+    const [tasks, setTask] = React.useState(data);
 
-    const completedTasks = tasks.filter( t => !!t.completed).length;
-    const totalTasks = tasks.length;
-    const searchedTasks = tasks.filter(
+    const completedTasks = tasks ? tasks.filter( t => !!t.completed).length : '0';
+    const totalTasks = tasks ? tasks.length : '0';
+    const searchedTasks = tasks ? tasks.filter(
         t => t.text.toLowerCase().includes(searchValue.toLowerCase())
-    );
+    ) : '';
 
     return(
         <main className='main-app'>
@@ -34,6 +26,7 @@ function Main(){
                 <TaskList
                     data={searchedTasks}
                     update={setTask}
+                    save={save}
                 />
             </div>
         </main>

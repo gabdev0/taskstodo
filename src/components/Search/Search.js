@@ -1,10 +1,13 @@
+import { SearchIcon } from '../SearchIcon/SearchIcon';
 import './Search.css';
 
 function Search({searchValue, setSearchValue}){
     return(
         <div className='search-content'>
             <form>
-                <label htmlFor='search'><a>X</a></label>
+                <label htmlFor='search'>
+                    <SearchIcon/>
+                </label>
                 <input 
                     id='search' 
                     placeholder='Search...'

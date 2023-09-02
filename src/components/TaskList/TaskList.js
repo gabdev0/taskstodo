@@ -1,20 +1,22 @@
 import './TaskList.css';
 import { TaskCard } from '../TaskCard/TaskCard';
 
-function TaskList({ data, update }){
+function TaskList({ data, update, save }){
     const tasks = data;
 
     const completed = (text) => {        
         const copyData = [...data];
         const index = copyData.find( d => d.text === text);
         index.completed=!index.completed
+        save();
         update(copyData);
     }
 
     const remove = (text) => {        
         const copyData = [...data];
         const filter = copyData.filter( d => d.text !== text);
-        update(filter);
+        save();
+        update(copyData);
     }
 
     return(
