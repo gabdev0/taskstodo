@@ -1,7 +1,5 @@
 import React from "react";
-import { Header } from "../components/Header/Header";
-import { Main   } from '../components/Main/Main';
-import { Footer } from "../components/Footer/Footer";
+import { AppUI } from "./AppUI";
 
 // const defautlTasks = [
 //     {text: "read the book for tomorrow", completed: false}, 
@@ -36,14 +34,10 @@ function App(){
     const [tasks, saveTasks] = useLocalStorage('TASKS_V1', []);
     
     return(
-        <React.StrictMode>
-            <Header/>
-            <Main
-                data={ tasks }
-                save={ () => saveTasks(tasks) }
-            />
-            <Footer/>
-        </React.StrictMode>
+        <AppUI
+            data={tasks}
+            updateData={() => saveTasks(tasks)}
+        />
     );
 }
 
